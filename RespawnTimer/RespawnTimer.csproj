@@ -10,6 +10,7 @@
         <Optimize>true</Optimize>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Platforms>AnyCPU</Platforms>
+        <PlatformTarget>x64</PlatformTarget>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'NWAPI' ">
@@ -33,6 +34,7 @@
 
     <ItemGroup>
         <PackageReference Condition=" '$(Configuration)' == 'EXILED' " Include="EXILED" Version="8.9.6" />
+        <PackageReference Include="EXILEDOFFICIAL" Version="8.11.0" />
         <PackageReference Condition=" '$(Configuration)' == 'NWAPI' " Include="Northwood.PluginAPI" Version="13.1.2" />
     </ItemGroup>
 
