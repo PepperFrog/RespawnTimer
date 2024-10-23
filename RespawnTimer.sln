@@ -1,20 +1,35 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30523.141
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RespawnTimer", "RespawnTimer\RespawnTimer.csproj", "{8A5C7D97-95AE-4008-B32E-B365B30DBA30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RespawnTimer_Exiled", "RespawnTimer_Exiled\RespawnTimer_Exiled.csproj", "{8A5C7D97-95AE-4008-B32E-B365B30DBA30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RespawnTimer_NW", "RespawnTimer_NW\RespawnTimer_NW.csproj", "{E0D1618A-C17C-409A-A418-1474F8BFAFAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		EXILED|Any CPU = EXILED|Any CPU
-		NWAPI|Any CPU = NWAPI|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8A5C7D97-95AE-4008-B32E-B365B30DBA30}.EXILED|Any CPU.ActiveCfg = EXILED|Any CPU
-		{8A5C7D97-95AE-4008-B32E-B365B30DBA30}.EXILED|Any CPU.Build.0 = EXILED|Any CPU
-		{8A5C7D97-95AE-4008-B32E-B365B30DBA30}.NWAPI|Any CPU.ActiveCfg = NWAPI|Any CPU
-		{8A5C7D97-95AE-4008-B32E-B365B30DBA30}.NWAPI|Any CPU.Build.0 = NWAPI|Any CPU
+		{8A5C7D97-95AE-4008-B32E-B365B30DBA30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A5C7D97-95AE-4008-B32E-B365B30DBA30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A5C7D97-95AE-4008-B32E-B365B30DBA30}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8A5C7D97-95AE-4008-B32E-B365B30DBA30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A5C7D97-95AE-4008-B32E-B365B30DBA30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A5C7D97-95AE-4008-B32E-B365B30DBA30}.Release|x64.ActiveCfg = Release|Any CPU
+		{8A5C7D97-95AE-4008-B32E-B365B30DBA30}.Release|x64.Build.0 = Release|Any CPU
+		{E0D1618A-C17C-409A-A418-1474F8BFAFAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0D1618A-C17C-409A-A418-1474F8BFAFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0D1618A-C17C-409A-A418-1474F8BFAFAC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E0D1618A-C17C-409A-A418-1474F8BFAFAC}.Debug|x64.Build.0 = Debug|Any CPU
+		{E0D1618A-C17C-409A-A418-1474F8BFAFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0D1618A-C17C-409A-A418-1474F8BFAFAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0D1618A-C17C-409A-A418-1474F8BFAFAC}.Release|x64.ActiveCfg = Release|Any CPU
+		{E0D1618A-C17C-409A-A418-1474F8BFAFAC}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

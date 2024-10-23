@@ -20,16 +20,13 @@
         [Description("The Chaos Insurgency display name.")]
         public string Ci { get; private set; } = "<color=green>Chaos Insurgency</color>";
 
-#if EXILED
         [Description("The Serpent's Hand display name.")]
         public string Sh { get; private set; } = "<color=red>Serpent's Hand</color>";
 
         [Description("The Unusual Incidents Unit  display name.")]
         public string Uiu { get; private set; } = "<color=yellow>Unusual Incidents Unit</color>";
-#endif
 
         [Description("The display names for warhead statuses:")]
-#if EXILED
         public Dictionary<Exiled.API.Enums.WarheadStatus, string> WarheadStatus { get; private set; } = new()
         {
             {
@@ -45,22 +42,5 @@
                 Exiled.API.Enums.WarheadStatus.Detonated, "<color=#640000>Detonated</color>"
             },
         };
-#else
-        public Dictionary<string, string> WarheadStatus { get; private set; } = new()
-        {
-            {
-                "NotArmed", "<color=green>Unarmed</color>"
-            },
-            {
-                "Armed", "<color=orange>Armed</color>"
-            },
-            {
-                "InProgress", "<color=red>In Progress - </color> {detonation_time} s"
-            },
-            {
-                "Detonated", "<color=#640000>Detonated</color>"
-            },
-        };
-#endif
     }
 }

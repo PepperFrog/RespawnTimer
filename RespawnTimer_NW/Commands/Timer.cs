@@ -2,11 +2,7 @@
 {
     using CommandSystem;
     using System;
-#if EXILED
-    using Exiled.API.Features;
-#else
     using PluginAPI.Core;
-#endif
 
     using static API.API;
 

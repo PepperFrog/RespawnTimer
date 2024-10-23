@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>RespawnTimer</AssemblyName>
+        <RootNamespace>RespawnTimer</RootNamespace>
+        <TargetFramework>net48</TargetFramework>
+        <LangVersion>10</LangVersion>
+        <Nullable>disable</Nullable>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Optimize>true</Optimize>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Platforms>AnyCPU</Platforms>
+        <PlatformTarget>x64</PlatformTarget>
+        <NoWin32Manifest>true</NoWin32Manifest>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'NWAPI' ">
+        <TargetName>RespawnTimer-NW</TargetName>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <DebugType>embedded</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <DebugType>embedded</DebugType>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <Reference Include="Assembly-CSharp-firstpass" HintPath="$(EXILED_REFERENCES)\Assembly-CSharp-firstpass.dll" />
+        <Reference Include="UnityEngine" HintPath="$(EXILED_REFERENCES)\UnityEngine.dll" />
+        <Reference Include="UnityEngine.CoreModule" HintPath="$(EXILED_REFERENCES)\UnityEngine.CoreModule.dll" />
+        <Reference Include="UnityEngine.PhysicsModule" HintPath="$(EXILED_REFERENCES)\UnityEngine.PhysicsModule.dll" />
+        <Reference Include="Mirror" HintPath="$(EXILED_REFERENCES)\Mirror.dll" />
+        <Reference Include="YamlDotNet" HintPath="$(EXILED_REFERENCES)\YamlDotNet.dll" />
+    </ItemGroup>
+    
+    <ItemGroup Condition=" '$(Configuration)' == 'NWAPI' ">
+        <Reference Include="Assembly-CSharp" HintPath="$(EXILED_REFERENCES)\Assembly-CSharp-Publicized.dll" />
+        <Reference Include="NorthwoodLib" HintPath="$(EXILED_REFERENCES)\NorthwoodLib.dll" />
+        <Reference Include="CommandSystem.Core" HintPath="$(EXILED_REFERENCES)\CommandSystem.Core.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Condition=" '$(Configuration)' == 'EXILED' " Include="EXILED" Version="8.9.6" />
+        <PackageReference Include="ExMod.Exiled" Version="8.12.2" />
+        <PackageReference Condition=" '$(Configuration)' == 'NWAPI' " Include="Northwood.PluginAPI" Version="13.1.2" />
+    </ItemGroup>
+
+</Project>

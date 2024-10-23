@@ -24,11 +24,7 @@
             IsActive = false;
 
             IEnumerable<Assembly> assemblies =
-#if EXILED
-            Exiled.Loader.Loader.Dependencies;
-#else
             PluginAPI.Loader.AssemblyLoader.Dependencies;
-#endif
 
             Assembly assembly = assemblies.FirstOrDefault(x => x.GetName().Name == RUEINAME);
             if (assembly == null)

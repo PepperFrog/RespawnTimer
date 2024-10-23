@@ -3,11 +3,7 @@
     using System.Collections.Generic;
     using System.ComponentModel;
 
-#if EXILED
     public sealed class Config : Exiled.API.Interfaces.IConfig
-#else
-    public sealed class Config
-#endif
     {
         [Description("Whether the plugin is enabled.")]
         public bool IsEnabled { get; set; } = true;

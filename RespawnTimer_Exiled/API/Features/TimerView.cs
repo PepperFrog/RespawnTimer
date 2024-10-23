@@ -7,12 +7,8 @@
     using Respawning;
     using Serialization;
     using UnityEngine;
-#if EXILED
     using Exiled.API.Features;
     using Exiled.Loader;
-#else
-    using PluginAPI.Core;
-#endif
 
     public partial class TimerView
     {

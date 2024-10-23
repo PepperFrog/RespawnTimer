@@ -8,12 +8,8 @@ using PlayerRoles;
 using PlayerRoles.PlayableScps.Scp079;
 using Respawning;
 using UnityEngine;
-#if EXILED
 using Exiled.API.Enums;
 using Exiled.API.Features;
-#else
-    using PluginAPI.Core;
-#endif
 
 public partial class TimerView
 {
@@ -70,7 +66,6 @@ public partial class TimerView
             case SpawnableTeamType.None:
                 return;
 
-#if EXILED
             case SpawnableTeamType.NineTailedFox:
                 StringBuilder.Replace("{team}", !API.UiuSpawnable ? Properties.Ntf : Properties.Uiu);
                 break;
@@ -78,25 +73,12 @@ public partial class TimerView
             case SpawnableTeamType.ChaosInsurgency:
                 StringBuilder.Replace("{team}", !API.SerpentsHandSpawnable ? Properties.Ci : Properties.Sh);
                 break;
-#else
-            case SpawnableTeamType.NineTailedFox:
-                StringBuilder.Replace("{team}", Properties.Ntf);
-                break;
-
-            case SpawnableTeamType.ChaosInsurgency:
-                StringBuilder.Replace("{team}", Properties.Ci);
-                break;
-#endif
         }
     }
 
     private void SetSpectatorCountAndSpawnChance(int? spectatorCount = null)
     {
-#if EXILED
         StringBuilder.Replace("{spectators_num}", spectatorCount?.ToString() ?? Player.List.Count(x => x.Role.Team == Team.Dead && !x.IsOverwatchEnabled).ToString());
-#else
-        StringBuilder.Replace("{spectators_num}", spectatorCount?.ToString() ?? Player.GetPlayers().Count(x => x.Role == RoleTypeId.Spectator && !x.IsOverwatchEnabled).ToString());
-#endif
         // Backwards compatibility
         StringBuilder.Replace("{ntf_tickets_num}", "{ntf_spawn_chance}");
         StringBuilder.Replace("{ci_tickets_num}", "{ci_spawn_chance}");
@@ -108,17 +90,11 @@ public partial class TimerView
 
     private void SetWarheadStatus()
     {
-#if EXILED
         WarheadStatus warheadStatus = Warhead.Status;
         StringBuilder.Replace("{warhead_status}", Properties.WarheadStatus[warheadStatus]);
         StringBuilder.Replace(
             "{detonation_time}",
             warheadStatus == WarheadStatus.InProgress ? Mathf.Round(Warhead.DetonationTimer).ToString(CultureInfo.InvariantCulture) : string.Empty);
-#else
-        string warheadStatus = Warhead.IsDetonationInProgress ? Warhead.IsDetonated ? "Detonated" : "InProgress" : Warhead.LeverStatus ? "Armed" : "NotArmed";
-        StringBuilder.Replace("{warhead_status}", Properties.WarheadStatus[warheadStatus]);
-        StringBuilder.Replace("{detonation_time}", warheadStatus == "InProgress" ? Mathf.Round(Warhead.DetonationTime).ToString(CultureInfo.InvariantCulture) : string.Empty);
-#endif
     }
 
     private void SetGeneratorCount()
